@@ -1,15 +1,16 @@
 from ultralytics import YOLO
+import torch
 
-def main():
-    model = YOLO('yolov8n.pt')
-
+def train():
+    model = YOLO("yolo11n.pt")
     model.train(
-        data='config.yaml',
+        data="rock-paper-scissors-11/data.yaml",
         epochs=50,
         imgsz=640,
+        device="mps",
         batch=16,
-        device='cpu'
+        workers=4
     )
 
-if __name__ == '__main__':
-    main()
+if __name__ == "__main__":
+    train()

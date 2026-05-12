@@ -1,9 +1,0 @@
-title: dataset config
-path: ./data
-train: images/train
-val: images/val
-nc: 3
-names:
-0: person
-1: car
-2: dog

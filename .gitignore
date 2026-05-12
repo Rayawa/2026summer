@@ -1,6 +1,7 @@
 # Machine learning model files
 model.pkl
 *.pkl
+rock-paper-scissors-11/
 
 # macOS system files
 .DS_Store

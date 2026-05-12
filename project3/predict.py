@@ -1,17 +1,14 @@
 from ultralytics import YOLO
-import cv2
 
-def main():
-    model = YOLO('runs/detect/train/weights/best.pt')
+def predict():
+    model = YOLO("runs/detect/train/weights/best.pt")
+    results = model.predict(
+        source="my_hand.jpg",
+        save=True,
+        conf=0.3,
+        imgsz=640
+    )
+    print("识别完成，结果已保存至 runs/detect 目录下")
 
-    results = model('data/images/val/sample.jpg')
-
-    for r in results:
-        img = r.plot()
-        cv2.imshow('result', img)
-        cv2.waitKey(0)
-
-    cv2.destroyAllWindows()
-
-if __name__ == '__main__':
-    main()
+if __name__ == "__main__":
+    predict()
