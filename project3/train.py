@@ -1,5 +1,4 @@
 from ultralytics import YOLO
-import torch
 
 def train():
     model = YOLO("yolo11n.pt")
@@ -8,8 +7,9 @@ def train():
         epochs=50,
         imgsz=640,
         device="mps",
-        batch=16,
-        workers=4
+        batch=8,
+        workers=8,
+        optimizer="SGD"
     )
 
 if __name__ == "__main__":
