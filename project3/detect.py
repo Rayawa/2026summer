@@ -34,7 +34,7 @@ def detect():
 
         cv2.putText(
             annotated,
-            f"FPS: {fps:.1f}",
+            f"FPS: {fps:.1f} | press Q to exit",
             (20, 40),
             cv2.FONT_HERSHEY_SIMPLEX,
             1,
@@ -42,7 +42,7 @@ def detect():
             2
         )
 
-        cv2.imshow("Rock Paper Scissors Detection", annotated)
+        cv2.imshow("Rock/Paper/Scissors Detection by Ray Chen", annotated)
 
         if cv2.waitKey(1) & 0xFF == ord("q"):
             break
