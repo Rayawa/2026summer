@@ -1,4 +1,5 @@
 from ultralytics import YOLO
+import torch
 
 def train():
     model = YOLO("yolo11n.pt")
@@ -6,10 +7,10 @@ def train():
         data="rock-paper-scissors-11/data.yaml",
         epochs=50,
         imgsz=640,
-        device="mps",
-        batch=8,
+        device="cuda",
+        batch=16,
         workers=8,
-        optimizer="SGD"
+        optimizer="AdamW"
     )
 
 if __name__ == "__main__":
